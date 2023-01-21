@@ -1,8 +1,8 @@
 from xml.dom import minidom
 
-FILE_BARBATI = "C:\\Users\\msabau1\\Documents\\GenerarePersoane\\prenumeBaieti.txt"
-FILE_FEMEI = "C:\\Users\\msabau1\\Documents\\GenerarePersoane\\prenumeFete.txt"
-FILE_NUME_FAMILIE = "C:\\Users\\msabau1\\Documents\\GenerarePersoane\\numeFamilie.txt"
+FILE_BARBATI = "C:\\Users\\msabau1\\Documents\\GenerareNumePersoane\\PrenumeBaieti.txt"
+FILE_FEMEI = "C:\\Users\\msabau1\\Documents\\GenerareNumePersoane\\PrenumeFete.txt"
+FILE_NUME_FAMILIE = "C:\\Users\\msabau1\\Documents\\GenerareNumePersoane\\NumeFamilie.txt"
 criteriu_lungime = lambda nume: len(nume)
 def nrVocale(s):
     s = s.lower()
@@ -87,7 +87,7 @@ def prenumeXMLGenerator():
             e.appendChild(p)
             listaPrenume.appendChild(e)
         xml_str = root.toprettyxml(indent="\t")
-        file = "prenume.xml"
+        file = "Prenume.xml"
         with open(file, "w", encoding="utf-8-sig") as f:
             f.write(xml_str)
         f.close()
@@ -114,7 +114,7 @@ def numeFamilieXMLGenerator():
             e.appendChild(nodText)
             listaNume.appendChild(e)
         xml_str = root.toprettyxml(indent="\t")
-        file = "numeFamilie.xml"
+        file = "NumeFamilie.xml"
         with open(file, "w", encoding="utf-8-sig") as f:
             f.write(xml_str)
         f.close()
